@@ -1,0 +1,21 @@
+package Logics_Numbers;
+
+public class SecondMax {
+
+	public static void main(String[] args) {
+		int num=852893;
+		int fmax=0, smax=0;
+		while(num!=0) {
+			int rem=num%10;
+			if(rem>fmax) {
+				smax=fmax;
+				fmax=rem;
+			}
+			else if(rem<fmax &&  rem>smax) {
+				smax=rem;
+			}
+			num=num/10;
+		}
+		System.out.println(smax);
+	}
+}
