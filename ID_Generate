@@ -1,0 +1,37 @@
+package Logics;
+import java.util.Random;
+
+class KYC{
+	int KYCID;
+	String Name="Shanta";
+	String gen;
+	String Gender="Female"; 
+	
+//	KYC(int KYCID, String Name , String Gender){
+//		this.KYCID=KYCID;
+//		this.Name=Name;
+//		this.Gender=Gender;
+//	}
+	public void  GenerateId() {
+		Random random =new Random();
+		int no=100+ random.nextInt(899);
+		if(Gender=="Male") {
+			gen="M";
+		}
+		else if(Gender=="Female") {
+			gen="F";
+		}
+		else {
+			gen="Oth";
+		}
+		System.out.println(no+ ""+ Name.length()+gen);
+		//System.out.println(no);
+	}
+}
+
+public class mainclass {
+	public static void main(String[] args) {
+	KYC k1=new KYC();
+	k1.GenerateId();
+}
+}
