@@ -1,0 +1,25 @@
+package Logics_Numbers;
+ 
+public class MinMaxPrime {
+	static boolean isPrime(int num) {
+        if (num < 2)
+            return false;
+        for (int i = 2; i <= Math.sqrt(num); i++) {
+            if (num % i == 0)
+                return false;
+        } 
+        return true;
+    }
+    public static void main(String[] args) {
+        int min = 0, max = 0;
+        for (int num = 20; num <= 96; num++) {
+            if (isPrime(num)) {
+                if (min == 0)
+                    min = num;
+                max = num;
+            }
+        }
+        System.out.println("Minimum prime: " + min);
+        System.out.println("Maximum prime: " + max);
+    }
+}
