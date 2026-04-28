@@ -1,0 +1,70 @@
+package Array;
+
+class Queue_pgm1 {
+
+	int [] queue;
+	int boQ, toQ;
+	public Queue_pgm1(int size) {
+		queue = new int[size];
+		toQ=boQ=-1;
+	}
+	public boolean isFull() {
+		return toQ==queue.length-1;
+	}
+	public boolean isEmpty() {
+		return toQ==-1 || boQ==queue.length;
+	}
+	public void EnQueue(int value) {
+		if(isFull()) {
+			System.out.println("queue is full");
+		}
+		else if(boQ==-1) {
+			boQ=0;
+			queue[++toQ]=value;
+			System.out.println("value is stored");
+		}
+		else {
+			queue[++toQ]=value;
+			System.out.println("value is stored");
+		}
+	}
+	public void DeQueue() {
+		if(isEmpty()) {
+			System.out.println("queue is empty");
+		}
+		else {
+			int value= queue[boQ];
+			boQ++;
+			if(boQ>toQ) {
+				toQ=boQ=-1;
+			}
+			System.out.println("value is"+value+"deleted");
+		}
+	}
+	public void peek() {
+		if(isEmpty()) {
+			System.out.println("queue is empty");
+		}
+		else {
+			System.out.println("the peek value is"+queue[boQ]);
+		}
+	}
+	public void delete() {
+		queue=null;
+		System.out.println("queue is deleted");
+	}
+}
+public class Queue_pgm{
+	public static void main(String[] args) {
+		Queue_pgm1 p= new Queue_pgm1(4);
+		p.EnQueue(10);
+		p.EnQueue(20);
+		p.peek();
+		p.DeQueue();
+		p.peek();
+		p.isEmpty();
+		p.isFull();
+		p.delete();
+	}
+	
+}
