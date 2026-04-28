@@ -1,0 +1,23 @@
+package Logics_Numbers;
+
+public class Secondmin {
+	public static void main(String[] args) {
+		int num=48298513;
+		int fmin=9, smin=9;
+		while(num!=0) {
+			int rem=num%10;
+			if(rem<fmin) {
+				smin=fmin;
+				fmin=rem;
+			}
+			else if(rem<smin && rem>fmin) {
+				smin=rem;
+			}
+			num=num/10;
+		}
+		System.out.println(smin);
+		
+	}
+	
+
+}
