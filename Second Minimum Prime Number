@@ -1,0 +1,32 @@
+package Logics_Numbers;
+
+public class SumMinMaxPrime {
+	static boolean isPrime(int num) {
+        if (num < 2)
+            return false;
+
+        for (int i = 2; i <= Math.sqrt(num); i++) {
+            if (num % i == 0)
+                return false;
+        }
+        return true;
+    }
+
+    public static void main(String[] args) {
+
+        int min = 0, max = 0;
+
+        for (int num = 102; num <= 196; num++) {
+
+            if (isPrime(num)) {
+
+                if (min == 0)
+                    min = num;
+
+                max = num;
+            }
+        }
+
+        System.out.println("Sum of Min and Max prime: " + (min + max));
+    }
+}
