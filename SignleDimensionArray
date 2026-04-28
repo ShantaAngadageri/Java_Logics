@@ -1,0 +1,80 @@
+package Array;
+
+class SingleDimensionArray1 {
+    String[] arr;
+
+    public SingleDimensionArray1(int size) {
+        arr = new String[size];
+        // By default, all values are null in String array
+    }
+
+    public void insertion(int index, String value) {
+        try {
+            if (arr[index] == null) {
+                arr[index] = value;
+                System.out.println("The value : " + value + " is entered");
+            } else {
+                System.out.println("The block is already filled");
+            }
+        } catch (Exception e) {
+            System.out.println("Invalid index");
+        }
+    }
+
+    public void traverse() {
+        for (int i = 0; i < arr.length; i++) {
+            System.out.println(arr[i]);
+        }
+    }
+
+    public void searching(String searchValue) {
+        try {
+            for (int i = 0; i < arr.length; i++) {
+                if (arr[i] != null && arr[i].equals(searchValue)) {
+                    System.out.println("The value is present at index: " + i);
+                    return;
+                }
+            }
+            System.out.println("The value is not present");
+        } catch (Exception e) {
+            System.out.println("Enter valid value");
+        }
+    }
+
+    public void deletion(String value) {
+        try {
+            for (int i = 0; i < arr.length; i++) {
+                if (arr[i] != null && arr[i].equals(value)) {
+                    arr[i] = null;
+                    System.out.println("The value is deleted");
+                    return;
+                }
+            }
+            System.out.println("The value is not present");
+        } catch (Exception e) {
+            System.out.println("Enter valid value");
+        }
+    }
+}
+
+public class mainclass {
+    public static void main(String[] args) {
+        SingleDimensionArray1 sda = new SingleDimensionArray1(5);
+
+        sda.insertion(0, "Java");
+        sda.insertion(3, "Python");
+        sda.insertion(4, "C++");
+        sda.insertion(1, "SQL");
+        sda.insertion(2, "HTML");
+
+        sda.insertion(0, "React"); // Already filled
+        sda.insertion(5, "Test");  // Invalid index
+
+        sda.traverse();
+
+        sda.searching("HTML");
+        sda.deletion("HTML");
+
+        sda.traverse();
+    }
+}
