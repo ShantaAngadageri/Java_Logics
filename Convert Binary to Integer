@@ -1,0 +1,17 @@
+package Logics_Numbers;
+
+import java.util.Scanner;
+
+public class Integer {
+	public static void main(String[] args) {
+		Scanner sc= new Scanner(System.in);
+	    System.out.println("Enter a number");
+	    String binary=sc.nextLine();
+	    int result=0; 
+	    for(int i=0;i<binary.length();i++) {
+	    	char ch=binary.charAt(i);
+	    	result=(result*2)+(ch-'0');
+	    }
+	    System.out.println(result);
+		}
+}
