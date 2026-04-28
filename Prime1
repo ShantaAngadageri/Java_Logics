@@ -1,0 +1,23 @@
+package Logics;
+
+public class Prime2 {
+      static int CountPrime(int a, int b) {
+    	  int  count=0;
+    	  boolean flag=true;
+    	  for(int num=a;num<=b;num++) {
+    		  for(int i=2;i<=Math.sqrt(num);i++) {
+    			  if(num%i==0) {
+    				  flag=false;
+    				  break;
+    			  }
+    		  }
+    		  if(flag) {
+    			  count++;
+    		  }
+    	  }
+    	  return count;
+      }
+      public static void main(String[] args) {
+    	  System.out.println(CountPrime(21,150));
+      }
+}
